@@ -18,22 +18,21 @@ namespace DemoProject.View.MasterPage
 
         }
 
-        public static void NavigateTo(MenuItem menu)
+        public  void NavigateTo(MenuItem menu)
         {
             if (menu != null)
             {
 
-                GetMenuPage(menu);
+                 GetMenuPage(menu);
 
                 //Detail = displayPage;
+                int coun = Navigation.NavigationStack.Count;
+                Detail.Title = menu.Title;
 
-                //Detail.Title = menu.Title;
-
-                //// menuPage.Menu.SelectedItem = null;
-
-                //IsPresented = false;
-                //IsGestureEnabled = false;
-                //this.MasterBehavior = MasterBehavior.Popover;
+                // menuPage.Menu.SelectedItem = null;
+                IsPresented = false;
+                IsGestureEnabled = false;
+                this.MasterBehavior = MasterBehavior.Popover;
 
 
             }
@@ -41,19 +40,19 @@ namespace DemoProject.View.MasterPage
 
         void GetMenuPage(MenuItem menuItem)
         {
-            NavigationPage page = new NavigationPage();
+           Page page = new Page();
             try
             {
                 switch (menuItem.MenuType)
                 {
                     case MenuTypes.Home1:
-                        page = new NavigationPage(new HomePage1());
+                        Detail = new NavigationPage(new HomePage1());
                         break;
                     case MenuTypes.Home2:
-                        page = new NavigationPage(new HomePage2());
+                        Detail = new NavigationPage(new HomePage2());
                         break;
                     default:
-                        page = new NavigationPage(new HomePage1());
+                        Detail = new NavigationPage(new HomePage1());
                         break;
                 }
             }
@@ -61,16 +60,11 @@ namespace DemoProject.View.MasterPage
             {
 
             }
-            Detail = page;
+            //page.BarBackgroundColor = Color.FromHex("#19374F");
+            //page.BarTextColor = Color.White;
+            //page.Icon = null;
+            // return page;
 
-            Detail.Title = menuItem.Title;
-
-            
-
-            IsPresented = false;
-            IsGestureEnabled = false;
-            this.MasterBehavior = MasterBehavior.Popover;
-            
         }
     }
 }

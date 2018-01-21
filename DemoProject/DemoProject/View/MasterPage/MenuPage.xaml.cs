@@ -12,22 +12,20 @@ namespace DemoProject.View.MasterPage
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPage : ContentPage
     {
-       
+        
         public MenuPage()
         {
             InitializeComponent();
+            
             List<MenuItem> menuitem = new List<MenuItem>()
             {
                 new MenuItem() { MenuType = MenuTypes.Home1, Title = "List" },
                 new MenuItem() { MenuType=MenuTypes.Home2, Title="Add"}
             };
             menulist.ItemsSource = menuitem;
-            menulist.ItemTapped += Menulist_ItemTapped;
+            menulist.ItemTapped += (sender, e)=> App.RootNavigation.NavigateTo(e.Item as MenuItem);
         }
 
-        private void Menulist_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            Root.NavigateTo(e.Item as MenuItem);
-        }
+        
     }
 }

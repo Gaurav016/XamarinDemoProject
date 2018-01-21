@@ -4,14 +4,14 @@
              x:Class="DemoProject.View.MasterPage.MenuPage"
              Title="Menu"
              Icon="ham"
-             >
+            >
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="menulist">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding Title}" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                        <ViewCell >
+                            <Label Text="{Binding Title}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="Black"></Label>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

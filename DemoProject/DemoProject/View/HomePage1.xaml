@@ -5,9 +5,15 @@
              BackgroundColor="#e8e6e3">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="HomePage1"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="menulist">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Label Text="{Binding Name}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

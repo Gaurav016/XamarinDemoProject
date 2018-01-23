@@ -58,7 +58,7 @@ namespace DemoProject.View.MasterPage
             }
             catch (Exception ex)
             {
-
+                
             }
             //page.BarBackgroundColor = Color.FromHex("#19374F");
             //page.BarTextColor = Color.White;

@@ -13,19 +13,19 @@ using DemoProject.Droid.CustomRenderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(Xamarin.Forms.ListView), typeof(CustomListViewRenderer))]
+//[assembly: ExportRenderer(typeof(Xamarin.Forms.ListView), typeof(CustomListViewRenderer))]
 namespace DemoProject.Droid.CustomRenderer
 {
-    public class CustomListViewRenderer: ListViewRenderer
+    public class CustomListViewRenderer // ListViewRenderer
     {
-        public CustomListViewRenderer(Context context) : base(context)
-        {
-            AutoPackage = false;
-        }
+        //public CustomListViewRenderer(Context context) : base(context)
+        //{
+        //    AutoPackage = false;
+        //}
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.ListView> e)
-        {
-           
-        }
+        //protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.ListView> e)
+        //{
+
+        //}
     }
 }

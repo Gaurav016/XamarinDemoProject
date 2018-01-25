@@ -7,12 +7,12 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="10">
-                <component:DemoEntryComponent x:Name="name" DemoLabel="Name" DemoEntry="{Binding profileData.Name,Mode=TwoWay}" ></component:DemoEntryComponent>
+                <component:DemoEntryComponent x:Name="name" DemoLabel="Name" DemoPlaceHolder="Name"  DemoEntry="{Binding profileData.Name,Mode=TwoWay}" ></component:DemoEntryComponent>
                 <component:DemoPickerComponent x:Name="nationality" DemoLabel="Nationality" DemoPicker="{Binding nationalitylist}" SelectedText="{Binding profileData.Nationality,Mode=TwoWay}" ></component:DemoPickerComponent>
-                <component:DemoDatePickerComponent x:Name="DOB" DemoLabel="D.O.B"></component:DemoDatePickerComponent>
-                <component:DemoEntryComponent x:Name="maritalstatus" DemoLabel="Marital Status" DemoEntry="{Binding profileData.MaritalStatus,Mode=TwoWay}" ></component:DemoEntryComponent>
-                <component:DemoEntryComponent x:Name="gender" DemoLabel="Gender" DemoEntry="{Binding profileData.Gender,Mode=TwoWay}"></component:DemoEntryComponent>
-                <Button Text="Submit" Command="{Binding GetDataCommand}"></Button>
+                <component:DemoDatePickerComponent x:Name="DOB" DemoLabel="D.O.B" DemoDatePicker="{Binding profileData.DOB}"></component:DemoDatePickerComponent>
+                <component:DemoEntryComponent x:Name="maritalstatus" DemoLabel="Marital Status" DemoPlaceHolder="Marital Status" DemoEntry="{Binding profileData.MaritalStatus,Mode=TwoWay}" ></component:DemoEntryComponent>
+                <component:DemoEntryComponent x:Name="gender" DemoLabel="Gender" DemoPlaceHolder="Gender" DemoEntry="{Binding profileData.Gender,Mode=TwoWay}"></component:DemoEntryComponent>
+                <Button Text="Submit" Command="{Binding ShowDataCommand}"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

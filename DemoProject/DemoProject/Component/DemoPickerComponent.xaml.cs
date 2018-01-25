@@ -17,7 +17,9 @@ namespace DemoProject.Component
 
         private void Picker_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            SelectedText = picker.SelectedItem.ToString();
+            var x = sender as Picker;
+            SelectedText = x.Items[x.SelectedIndex];
+            
         }
 
         #region DemoLabel
@@ -90,8 +92,8 @@ namespace DemoProject.Component
 
         public string SelectedText
         {
-            get { return (string)GetValue(DemoPickerProperty); }
-            set { SetValue(DemoPickerProperty, value); }
+            get { return (string)GetValue(SelectedTextProperty); }
+            set { SetValue(SelectedTextProperty, value); }
         }
 
         static void SelectedTextChanged(BindableObject bindable, object oldValue, object newValue)

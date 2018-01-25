@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoProject.View.DetailDataPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding profileData.Name, StringFormat='Name = {0:N}'}"/>
+            <Label Text="{Binding profileData.Nationality, StringFormat='Nationality = {0:N}'}"/>
+            <Label Text="{Binding profileData.MaritalStatus, StringFormat='MaritalStatus = {0:N}'}"/>
+            <Label Text="{Binding profileData.Gender, StringFormat='Gender = {0:N}'}"/>
+
+            <Button Text="Done" Command="{Binding SetDataCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

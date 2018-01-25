@@ -5,7 +5,7 @@
              BackgroundColor="#e8e6e3">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="menulist">
+            <ListView x:Name="menulist" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >

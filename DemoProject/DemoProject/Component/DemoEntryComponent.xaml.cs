@@ -54,7 +54,8 @@ namespace DemoProject.Component
         #endregion
 
         #region DemoEntry
-        public static readonly BindableProperty DemoEntryProperty = BindableProperty.Create("DemoEntry", typeof(string), typeof(DemoEntryComponent),"",propertyChanged:OnEntryChanged);
+        public static readonly BindableProperty DemoEntryProperty = BindableProperty.Create("DemoEntry", // Creating Bindable Property
+            typeof(string), typeof(DemoEntryComponent),"",propertyChanged:OnEntryChanged);
 
         public string DemoEntry
         {
@@ -74,7 +75,8 @@ namespace DemoProject.Component
         #endregion
 
         #region ErrorLineLabel
-        public static readonly BindableProperty ErrorlineLabel = BindableProperty.Create("ErrorLineLabel", typeof(string), typeof(DemoEntryComponent), "", propertyChanged: OnErrorLabelChanged);
+        public static readonly BindableProperty ErrorlineLabel = BindableProperty.Create("ErrorLineLabel",
+            typeof(string), typeof(DemoEntryComponent), "", propertyChanged: OnErrorLabelChanged);
 
         public string ErrorLineLabel
         {
@@ -90,6 +92,26 @@ namespace DemoProject.Component
         void OnerrorlablChanged(string oldValue, string newValue)
         {
             errorline.Text = newValue;
+        }
+        #endregion
+
+        #region DemoPlaceHolder
+        public static readonly BindableProperty DemoPlaceHolderProperty = BindableProperty.Create("DemoPlaceHolder",typeof(string), typeof(DemoEntryComponent),"",propertyChanged:PlaceHolderTextChanged);
+
+        public string DemoPlaceHolder
+        {
+            get { return (string)GetValue(DemoPlaceHolderProperty); }
+            set { SetValue(DemoPlaceHolderProperty,value); }
+        }
+
+        static void PlaceHolderTextChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            ((DemoEntryComponent)bindable).OnPlaceHolderTextChanged((string)oldValue, (string)newValue);
+        }
+
+        void OnPlaceHolderTextChanged(string oldValue, string newValue)
+        {
+            entry.Placeholder = newValue;
         }
         #endregion
     }

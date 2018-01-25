@@ -11,13 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace DemoProject.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage2 : ContentPage
+    public partial class DetailDataPage : ContentPage
     {
         ProfileDataViewModel profileDataViewModel;
-        public HomePage2()
+        public DetailDataPage()
         {
             InitializeComponent();
-            profileDataViewModel = new ProfileDataViewModel(this.Navigation);
+            profileDataViewModel = new ProfileDataViewModel();
             BindingContext = profileDataViewModel;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,12 @@ namespace DemoProject.Component
         public DemoDatePickerComponent()
         {
             InitializeComponent();
+            datepicker.DateSelected += Datepicker_DateSelected;
+        }
+
+        private void Datepicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DemoDatePicker = e.NewDate.Date;
         }
 
         #region DemoLabel
@@ -38,22 +45,24 @@ namespace DemoProject.Component
         #endregion
 
         #region DemoDatePicker
-        public static readonly BindableProperty DemoDatePickerProperty = BindableProperty.Create("DemoEntry", typeof(System.DateTime), typeof(DemoDatePickerComponent), System.DateTime.Now, propertyChanged: OnDatePickerChanged);
+        public static readonly BindableProperty DemoDatePickerProperty = BindableProperty.Create("DemoDatePicker", typeof(DateTime), typeof(DemoDatePickerComponent), DateTime.Now, propertyChanged: OnDatePickerChanged);
 
-        public System.DateTime DemoDatePicker
+        public DateTime DemoDatePicker
         {
-            get { return (System.DateTime)GetValue(DemoDatePickerProperty); }
+            get { return (DateTime)GetValue(DemoDatePickerProperty); }
             set { SetValue(DemoDatePickerProperty, value); }
         }
 
         static void OnDatePickerChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            ((DemoDatePickerComponent)bindable).OndatePickerChanged((System.DateTime)oldValue, (System.DateTime)newValue);
+            ((DemoDatePickerComponent)bindable).OndatePickerChanged((DateTime)oldValue, (DateTime)newValue);
         }
 
-        void OndatePickerChanged(System.DateTime oldValue, System.DateTime newValue)
+        void OndatePickerChanged(DateTime oldValue, DateTime newValue)
         {
-            datepicker.Date= newValue;
+
+
+            datepicker.Date = newValue;
         }
         #endregion
 

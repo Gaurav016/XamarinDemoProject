@@ -3,15 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DemoProject.View.MasterPage.MenuPage"
              Title="Menu"
-             Icon="ham"
-            >
+             Icon="ham">
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="menulist">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
-                            <Label Text="{Binding Title}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                            <Label Text="{Binding Title}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center"></Label>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
